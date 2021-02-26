@@ -1,0 +1,43 @@
+/*
+Harsh Shah 
+ */
+package flagrisinganimation;
+import javafx.application.Application;
+import javafx.animation.PathTransition;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Line;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+
+public class Flagrisinganimation extends Application 
+{
+    @Override
+    
+    public void start(Stage pStage)
+    {
+        Pane a = new Pane();
+        ImageView fdu = new ImageView(new Image("image/fdu.jpg",1000,1000,true,true));
+        a.getChildren().add(fdu);
+        
+        PathTransition pt = new PathTransition(Duration.millis(5000) , new Line(270,90,1190,710) , fdu);
+        pt.setCycleCount(50);
+        pt.play();
+        Scene s = new Scene(a,2000,2000);
+        pStage.setTitle("This is the logo of my university -- 'Fdu Logo'");
+        
+        pStage.setScene(s);
+        pStage.show();
+        
+        
+    }
+    
+
+    public static void main(String[] args) 
+    {
+        launch(args);
+    }
+    
+}
